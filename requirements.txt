@@ -1,0 +1,8 @@
+streamlit==1.66.1
+numpy==2.5.4
+pandas==3.1.1
+matplotlib==3.11.2
+astropy==8.0.2
+requests==2.34.2
+reproject==0.21.0
+Pillow==13.0.0
