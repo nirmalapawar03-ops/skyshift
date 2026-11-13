@@ -18,6 +18,11 @@ st.set_page_config(
 BASE = Path(__file__).resolve().parent
 DATA_FOLDER = BASE / "data" / "real_spherex"
 
+LOGO_PATH = BASE / "skyshift_logo.png"
+
+if LOGO_PATH.exists():
+    st.logo(str(LOGO_PATH), size="large")
+
 from skyshift_search import (
     SkyPosition,
     build_search_query,
@@ -132,8 +137,13 @@ with st.sidebar:
 )
 
 
-st.title("SkyShift")
+if LOGO_PATH.exists():
+    st.image(str(LOGO_PATH), width=360)
+else:
+    st.title("SkyShift")
+
 st.subheader("Explore the changing infrared sky")
+
 
 st.write(
     "Inspect SPHEREx observations, understand their metadata, "
